@@ -1,0 +1,16 @@
+<div class="content">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter Any Input</mat-label>
+        <input matInput  [formControl]="anyinput"  required>
+        <mat-error *ngIf="anyinput.invalid">{{getAnyInputErrorMessage()}}</mat-error>
+        <mat-hint>alphanumeric, spaces, symbols, etc.</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>IP Address</mat-label>
+        <input matInput placeholder="0.0.0.0"  [formControl]="ipv4" required>
+        <mat-hint>IPv4 IP address Only</mat-hint>
+        <mat-error *ngIf="ipv4.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <br/>
+      <button mat-raised-button color="primary"  (click)="onNext()" >Next&nbsp; →</button>
+</div>
